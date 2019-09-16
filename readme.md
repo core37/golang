@@ -2,6 +2,10 @@
 
 ## pdf作业分享地址
 
+分享链接： http://139.9.57.167:20080/share/blvjo9md0lit3phfpkk0?secret=false
+
+另外本目录中t1.go即为本作业的地址
+
 ---
 
 ## 本地搭建作业
