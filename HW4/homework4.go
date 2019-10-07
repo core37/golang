@@ -17,11 +17,15 @@ func Init(nodes []Node) {
 
 // 需要down（下沉）的元素在切片中的索引为i，n为heap的长度，将该元素下沉到该元素对应的子树合适的位置，从而满足该子树为最小堆的要求
 func down(nodes []Node, i, n int) {
-	fmt.Printf(":%d %d %d\n", i, nodes[i].Value, len(nodes))
+	// fmt.Printf(":%d %d %d\n", i, nodes[i].Value, len(nodes))
 	if (2 * (i + 1) < len(nodes)){
 		if	(nodes[2 * (i + 1)].Value < nodes[2 * (i + 1) - 1].Value){
 			if nodes[2 * (i + 1)].Value < nodes[i].Value{
 				nodes[2 * (i + 1)],nodes[i] = nodes[i], nodes[2 * (i + 1)]
+			}
+		}else{
+			if nodes[2 * (i + 1) - 1].Value < nodes[i].Value{
+				nodes[2 * (i + 1) - 1],nodes[i] = nodes[i], nodes[2 * (i + 1) - 1]
 			}
 		}
 		down(nodes, 2 * (i + 1), n)
@@ -78,6 +82,7 @@ func Remove(nodes []Node, node Node) []Node {
 
 func main() {
 	//test Init
+    fmt.Printf("Test Init\nInit with array[1 3 2]\nExpecting:1 3 2\nResult:\n")
 	var arr []Node
 	Init(arr)
 	var n Node
@@ -94,22 +99,28 @@ func main() {
 	fmt.Printf("\n")
 
 	//test push
+    fmt.Printf("Test Push\nPush 0 into heap\nExpecting:0 1 2 3\nResult:\n")
 	n.Value = 0;
 	arr = Push(n, arr)
 	for i, n = range arr{
 		fmt.Printf("%d %d\n",i , n.Value)
 	}
+    fmt.Printf("\n")
 
 	//test pop
+    fmt.Printf("Test Pop\nPop 0 out of heap\nExpecting:1 3 2\nResult:\n")
 	n, arr = Pop(arr)
 	for i, n = range arr{
 		fmt.Printf("%d %d\n",i , n.Value)
 	}
+    fmt.Printf("\n")
 
-	//test remove
+    //test remove
+    fmt.Printf("Test Remove\nRemove the first node whose value equal to 1\nExpecting:2 3\nResult:\n")
 	n.Value = 1;
 	arr = Remove(arr, n)
 	for i, n = range arr{
 		fmt.Printf("%d %d\n",i , n.Value)
 	}
+    fmt.Printf("\n")
 }
