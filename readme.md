@@ -1,3 +1,15 @@
+# 第七周作业
+
+## 文件目录
+
+HW6/
+	Agenda/ #作业代码
+	report.md #报告
+	report.pdf #报告pdf版
+	
+博客地址
+https://blog.csdn.net/core37/article/details/102810494
+
 # 第五周作业
 
 ## 文件目录
@@ -52,4 +64,8 @@ src/
 ### 测试结果：
 
 ![1568561505354](1568561505354.png)
+
+
+
+
 
